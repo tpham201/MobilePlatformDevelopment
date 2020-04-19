@@ -92,17 +92,6 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         durationView.setText("Duration "+ duration +" day(s)");
         dateView.setText(date);
 
-
-//        place1 = new MarkerOptions().position(new LatLng(55.864239, -4.251806)).title("Your current location");
-//        place2 = new MarkerOptions().position(new LatLng(latitude, langtitude)).title(titleView.getText().toString());
-//        new FetchURL(MapActivity.this).execute(getUrl(place1.getPosition(), place2.getPosition(), "driving"), "driving");
-
-//        list.add(place1);
-//        list.add(place2);
-
-
-
-        //new FetchURL(MapActivity.this).execute(getUrl(currentPosition.getPosition(), roadPosition.getPosition(), "driving"), "driving");
         if(duration <= 10)
         {
             durationView.setTextColor(Color.WHITE);
@@ -130,71 +119,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         map.moveCamera(CameraUpdateFactory.newLatLng(marker));
 
         map.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(latitude, langtitude), 8.0f));
-//        mMap = map;
-//        mMap.addMarker(place1);
-//        mMap.addMarker(place2);
-//        showAllMarker();
-        //LatLng current = new LatLng(55.8771639, -4.1506034000000005);
-//        LatLng road = new LatLng(latitude, langtitude);
-//        LatLngBounds.Builder builder = new LatLngBounds.Builder();
-//        //builder.include(current);
-//        builder.include(road);
-//        int padding=50;
-//        LatLngBounds bounds = builder.build();
-//        final CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, padding);
-//        map.setOnMapLoadedCallback(new GoogleMap.OnMapLoadedCallback() {
-//            @Override
-//            public void onMapLoaded() {
-//                /**set animated zoom camera into map*/
-//                map.animateCamera(cu);
-//               // map.addMarker(new MarkerOptions().position(current).title("Your current location"));
-//                map.addMarker(new MarkerOptions().position(road).title(titleView.getText().toString()));
-//                PolylineOptions polyLineOptions = new PolylineOptions();
-//                polyLineOptions.add(current, road);
-//                polyLineOptions.width(5);
-//                polyLineOptions.color(Color.BLUE);
-//                map.addPolyline(polyLineOptions);
+
             }
-       // });
    }
-//   private void showAllMarker()
-////   {
-////       LatLngBounds.Builder builder = new LatLngBounds.Builder();
-////       for (MarkerOptions m:list)
-////       {
-////           builder.include(m.getPosition());
-////       }
-////       LatLngBounds bounds = builder.build();
-////       int width = getResources().getDisplayMetrics().widthPixels;
-////       int height = getResources().getDisplayMetrics().heightPixels;
-////       int padding = (int)(width*3);
-////       CameraUpdate cu=CameraUpdateFactory.newLatLngBounds(bounds,width,height,padding);
-////       mMap.animateCamera(cu);
-////
-////
-////
-////   }
-////    private String getUrl(LatLng origin, LatLng dest, String directionMode) {
-////        // Origin of route
-////        String str_origin = "origin=" + origin.latitude + "," + origin.longitude;
-////        // Destination of route
-////        String str_dest = "destination=" + dest.latitude + "," + dest.longitude;
-////        // Mode
-////        String mode = "mode=" + directionMode;
-////        // Building the parameters to the web service
-////        String parameters = str_origin + "&" + str_dest + "&" + mode;
-////        // Output format
-////        String output = "json";
-////        // Building the url to the web service
-////        String url = "https://maps.googleapis.com/maps/api/directions/" + output + "?" + parameters + "&key=AIzaSyCP60KpPsNA4lQnUdU54QZEfh9chg6b7bc";
-////        return url;
-////    }
-////
-////
-////    @Override
-////    public void onTaskDone(Object... values) {
-////        if (currentPolyline != null)
-////            currentPolyline.remove();
-////        currentPolyline = mMap.addPolyline((PolylineOptions) values[0]);
-////    }
-//}
+
